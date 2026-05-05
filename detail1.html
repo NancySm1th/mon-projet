@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails des Offres - ALLIANCE SUD-EST SARL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f4f4f4; padding: 20px; color: #333; }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        /* On cache tout par défaut */
+        .detail-section { 
+            display: none; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        /* Seule la section ciblée par l'URL s'affiche */
+        .detail-section:target { 
+            display: block; 
+            animation: fadeIn 0.6s ease;
+        }
+
+        .detail-section img { 
+            width: 100%; 
+            max-height: 450px; 
+            object-fit: cover; 
+            border-radius: 12px; 
+            margin-bottom: 25px; 
+        }
+
+        h2 { color: #233e8b; text-transform: uppercase; margin-bottom: 15px; border-bottom: 2px solid #2D9CD8; display: inline-block; }
+        .price { font-size: 26px; color: #27AE60; font-weight: bold; margin: 15px 0; }
+        .specs { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; background: #f9f9f9; padding: 20px; border-radius: 8px; }
+        
+        .back-btn { display: inline-block; margin-bottom: 20px; color: #2D9CD8; text-decoration: none; font-weight: bold; font-size: 18px; }
+        .back-btn:hover { color: #233e8b; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="natou.html#Offer" class="back-btn"><i class="fas fa-arrow-left"></i> ← Retour aux offres</a>
+
+    <section id="terrain1" class="detail-section">
+        <img src="arbuste.jpg" alt="Terrain Bonoua 1">
+        <h2>Terrain Bonoua - Lot 01</h2>
+        <p class="price">300.000 FCFA</p>
+        <div class="specs">
+            <p><strong><i class="fas fa-map-marker-alt"></i> Ville :</strong> Bonoua</p>
+            <p><strong><i class="fas fa-expand"></i> Superficie :</strong> 500 m²</p>
+            <p><strong><i class="fas fa-file-alt"></i> Document :</strong> ACD en cours</p>
+            <p><strong><i class="fas fa-check-circle"></i> État :</strong> Prêt à bâtir</p>
+        </div>
+        <p><strong>Description :</strong> Un emplacement stratégique idéal pour une résidence familiale ou un investissement locatif.</p>
+    </section>
+
+    <section id="terrain2" class="detail-section">
+        <img src="Rokia.jpeg" alt="Terrain Bonoua 2">
+        <h2>Terrain Bonoua - Lot 02 (Rokia)</h2>
+        <p class="price">300.000 FCFA</p>
+        <div class="specs">
+            <p><strong><i class="fas fa-map-marker-alt"></i> Ville :</strong> Bonoua</p>
+            <p><strong><i class="fas fa-expand"></i> Superficie :</strong> 500 m²</p>
+            <p><strong><i class="fas fa-file-alt"></i> Document :</strong> Approuvé</p>
+            <p><strong><i class="fas fa-check-circle"></i> État :</strong> Zone habitée</p>
+        </div>
+        <p><strong>Description :</strong> Terrain situé dans le secteur Rokia, bénéficiant d'un accès direct aux réseaux d'eau et d'électricité.</p>
+    </section>
+
+    <section id="terrain3" class="detail-section">
+        <img src="terrain.jpg" alt="Terrain Bonoua 3">
+        <h2>Terrain Bonoua - Lot 03</h2>
+        <p class="price">300.000 FCFA</p>
+        <div class="specs">
+            <p><strong><i class="fas fa-map-marker-alt"></i> Ville :</strong> Bonoua</p>
+            <p><strong><i class="fas fa-expand"></i> Superficie :</strong> 500 m²</p>
+            <p><strong><i class="fas fa-file-alt"></i> Document :</strong> AV</p>
+        </div>
+        <p><strong>Description :</strong> Site panoramique avec une excellente vue, parfait pour un projet de villa.</p>
+    </section>
+
+    <section id="terrain4" class="detail-section">
+        <img src="terrain.jpg" alt="Terrain Bonoua 4">
+        <h2>Terrain Bonoua - Lot 04</h2>
+        <p class="price">300.000 FCFA</p>
+        <div class="specs">
+            <p><strong><i class="fas fa-expand"></i> Superficie :</strong> 500 m²</p>
+            <p><strong><i class="fas fa-check-circle"></i> État :</strong> Plat</p>
+        </div>
+        <p><strong>Description :</strong> Terrain décapé et borné, prêt pour la mise en valeur.</p>
+    </section>
+
+    <section id="terrain5" class="detail-section">
+        <img src="terrain.jpg" alt="Terrain Bonoua 5">
+        <h2>Terrain Bonoua - Lot 05</h2>
+        <p class="price">300.000 FCFA</p>
+        <p><strong>Description :</strong> Zone en plein essor, forte plus-value garantie d'ici 2 ans.</p>
+    </section>
+
+    <section id="terrain6" class="detail-section">
+        <img src="terrain.jpg" alt="Terrain Bonoua 6">
+        <h2>Terrain Bonoua - Lot 06</h2>
+        <p class="price">300.000 FCFA</p>
+        <p><strong>Description :</strong> Emplacement calme, idéal pour une retraite paisible loin du bruit.</p>
+    </section>
+
+    <section id="terrain7" class="detail-section">
+        <img src="terrain.jpg" alt="Terrain Bonoua 7">
+        <h2>Terrain Bonoua - Lot 07</h2>
+        <p class="price">300.000 FCFA</p>
+        <p><strong>Description :</strong> Terrain facile d'accès, à seulement 10 minutes du centre-ville.</p>
+    </section>
+
+    <section id="terrain8" class="detail-section">
+        <img src="terrain.jpg" alt="Terrain Bonoua 8">
+        <h2>Terrain Bonoua - Lot 08</h2>
+        <p class="price">300.000 FCFA</p>
+        <p><strong>Description :</strong> Dernière opportunité sur ce site exceptionnel. À saisir rapidement.</p>
+    </section>
+
+</div>
+
+<script>
+    // Pour recharger la vue si on clique sur un autre lien sans quitter la page
+    window.addEventListener('hashchange', function() {
+        window.location.reload();
+    });
+</script>
+
+</body>
+</html>
