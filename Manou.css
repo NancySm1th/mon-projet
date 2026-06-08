@@ -251,7 +251,7 @@ nav {
     margin-top: 10px;
 }
 
-/* --- SECTION VIDÉO (BOÎTE RE-CONCEPTUALISÉE ET AGRANDIE) --- */
+/* --- SECTION VIDÉO --- */
 .video-card {
     background: #f8f9fa;
     padding: 50px 30px;
@@ -355,112 +355,271 @@ nav {
     background-color: var(--accent-color);
 }
 
-/* --- SECTION CONTACT (CHARTE BLEU BLEU-BLANC LUMINEUX) --- */
-.contact-section {
-    background-color: var(--primary-light); /* Adieu le gris triste, place à un fond bleu-blanc propre */
-    color: var(--dark-color);
+/* --- NOUVELLE ARCHITECTURE DE CONTACT ET FOOTER (STYLE SITE MODÈLE) --- */
+
+.model-contact-section {
+    background-color: #0b0c10; /* Fond noir ultra-moderne */
+    color: #ffffff;
     padding: 90px 0;
-    text-align: center;
 }
 
-.contact-section h2 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
+.model-contact-section h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
 }
 
-/* FLEX LAYOUT */
-.contact-flex-layout {
-    display: flex;
-    gap: 40px;
-    align-items: stretch;
-    margin-top: 40px;
+.model-contact-section .section-title-wrapper h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color); /* Rappel subtil de ton bleu vif */
+    margin: 10px auto 0 auto;
 }
 
-/* FORMULAIRE ÉPURÉ */
-.form-area {
-    flex: 1;
+.contact-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 50px;
+    align-items: start;
 }
 
-.form-area form {
+.contact-info-panel {
     display: flex;
     flex-direction: column;
+    gap: 30px;
+    text-align: left;
 }
 
-.form-area input,
-.form-area textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    background: #ffffff; /* Inputs blancs clairs */
-    border: 1px solid #ccdbe0;
-    color: var(--dark-color);
-    border-radius: 8px;
-    font-family: "Poppins", sans-serif;
-    font-size: 0.95rem;
-    transition: var(--transition);
-}
-
-.form-area input:focus,
-.form-area textarea:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0 0 10px rgba(10, 54, 99, 0.15);
-}
-
-.form-area textarea {
-    height: 160px;
-    resize: vertical;
-}
-
-/* BOUTON ENVOYER BLEU ROYAL */
-.btn-center-container {
+.info-item-box {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color); /* Ligne d'accentuation en bleu vif */
 }
 
-.btn-center-container button {
-    padding: 14px 40px;
-    background: var(--primary-color);
-    color: #fff;
+.info-item-box i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.info-item-box p {
+    margin: 0;
+    font-size: 1rem;
+    color: #c5c6c7;
+}
+
+/* FORMULAIRE ÉPURÉ AUX LIGNES MINIMALISTES */
+.model-form-box {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.model-form-group {
+    margin-bottom: 25px;
+}
+
+.model-form-group input, 
+.model-form-group textarea {
+    width: 100%;
+    background: transparent;
     border: none;
-    text-transform: uppercase;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 5px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+
+.model-form-group input:focus, 
+.model-form-group textarea:focus {
+    outline: none;
+    border-bottom-color: var(--accent-color); /* Soulignement au focus avec ton bleu actif */
+}
+
+.model-form-box button {
+    background: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 14px 35px;
     font-weight: 700;
     font-size: 0.95rem;
-    border-radius: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(10, 54, 99, 0.2);
+    width: 100%;
     transition: var(--transition);
 }
 
-.btn-center-container button:hover {
-    background: var(--accent-color);
-    box-shadow: 0 4px 15px rgba(45, 156, 216, 0.3);
+.model-form-box button:hover {
+    background: #ffffff;
+    color: #000000;
 }
 
-/* CARTE MAPS */
-.map-area {
-    flex: 1;
-    min-height: 400px;
+/* MODULE CARTE MAPS SÉCURISÉ */
+.model-map-wrapper {
+    margin-top: 50px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    height: 350px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.map-area iframe {
+.model-map-wrapper iframe {
     width: 100%;
     height: 100%;
-    border: none;
+    border: 0;
 }
 
-/* --- FOOTER --- */
-footer {
-    background: #ffffff;
-    color: #666666;
-    padding: 30px;
-    text-align: center;
-    border-top: 1px solid #eeeeee;
+/* FOOTER COMPLET DU SITE EXEMPLE */
+.model-footer {
+    background-color: #000000; /* Fond noir profond */
+    color: #999999;
+    padding: 60px 0 30px 0;
     font-size: 0.9rem;
-    font-weight: 500;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left;
+}
+
+.footer-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-brand-col h4 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin: 0 0 15px 0;
+    letter-spacing: 1px;
+}
+
+.footer-brand-col p {
+    line-height: 1.6;
+    color: #999999;
+}
+
+.footer-links-col h5, 
+.footer-contact-col h5 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+}
+
+.footer-links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-col a {
+    color: #999999;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links-col a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+.footer-contact-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #999999;
+}
+
+.footer-contact-col i {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+/* ZONE BASSE DU FOOTER (LIENS SOCIAUX GOOGLE / WHATSAPP) */
+.footer-bottom-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom-bar p {
+    margin: 0;
+}
+
+.social-icons-box {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons-box a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.social-icons-box a:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* BOUTON FLOTTANT WHATSAPP TECHNIQUE */
+.whatsapp-floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: var(--transition);
+}
+
+.whatsapp-floating-btn:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
 }
 
 /* --- MENU MOBILE RESPONSIVE --- */
@@ -498,8 +657,14 @@ footer {
         display: flex;
     }
 
-    .contact-flex-layout {
+    .contact-grid-layout, 
+    .footer-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom-bar {
         flex-direction: column;
+        text-align: center;
     }
     
     .hero-content h1 {
