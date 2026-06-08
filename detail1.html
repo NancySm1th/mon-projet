@@ -4,50 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détails des Offres - ALLIANCE SUD-EST SARL</title>
+    <!-- Importation de la police Poppins pour correspondre à index.html -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f4f4f4; padding: 20px; color: #333; }
-        .container { max-width: 900px; margin: 0 auto; }
+        /* --- HARMONISATION DES COULEURS ET DE LA TYPO --- */
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #f8f9fa; /* Fond clair uniforme */
+            padding: 40px 20px; 
+            color: #1a1a1a; 
+            line-height: 1.6;
+        }
         
-        /* On cache tout par défaut */
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        /* --- BOUTON RETOUR PROFESSIONNEL --- */
+        .back-btn { 
+            display: inline-flex; 
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 25px; 
+            color: #2D9CD8; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 16px; 
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover { 
+            color: #0A3663; 
+            transform: translateX(-3px); /* Petit effet de glissement au survol */
+        }
+        
+        /* --- SECTION DE DÉTAIL --- */
         .detail-section { 
             display: none; 
             background: white; 
             padding: 40px; 
-            border-radius: 15px; 
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            margin-top: 20px;
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(10, 54, 99, 0.06); /* Ombre douce bleutée */
+            margin-top: 10px;
+            border: 1px solid #f0f0f0;
         }
 
-        /* Seule la section ciblée par l'URL s'affiche */
+        /* Affichage de la section ciblée */
         .detail-section:target { 
             display: block; 
-            animation: fadeIn 0.6s ease;
+            animation: fadeIn 0.5s ease-out;
         }
 
+        /* --- BLOC IMAGE SOIGNÉ --- */
         .detail-section img { 
             width: 100%; 
-            max-height: 450px; 
+            max-height: 480px; 
             object-fit: cover; 
-            border-radius: 12px; 
-            margin-bottom: 25px; 
+            border-radius: 10px; 
+            margin-bottom: 30px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        h2 { color: #233e8b; text-transform: uppercase; margin-bottom: 15px; border-bottom: 2px solid #2D9CD8; display: inline-block; }
-        .price { font-size: 26px; color: #27AE60; font-weight: bold; margin: 15px 0; }
-        .specs { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; background: #f9f9f9; padding: 20px; border-radius: 8px; }
+        /* --- TITRE ET PRIX --- */
+        h2 { 
+            color: #0A3663; /* Bleu Royal principal */
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: uppercase; 
+            margin-bottom: 10px; 
+        }
         
-        .back-btn { display: inline-block; margin-bottom: 20px; color: #2D9CD8; text-decoration: none; font-weight: bold; font-size: 18px; }
-        .back-btn:hover { color: #233e8b; }
+        .price { 
+            font-size: 28px; 
+            color: #0A3663; /* Couleur uniforme */
+            font-weight: 800; 
+            margin: 10px 0 25px 0; 
+            display: inline-block;
+            background-color: #f0f5fa; /* Badge de mise en valeur */
+            padding: 5px 15px;
+            border-radius: 6px;
+            border-left: 4px solid #2D9CD8;
+        }
+        
+        /* --- GRILLE DES CARACTÉRISTIQUES --- */
+        .specs { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+            margin: 30px 0; 
+            background: #f0f5fa; /* Fond bleu-blanc très clair */
+            padding: 25px; 
+            border-radius: 10px; 
+            border: 1px solid #e1ecf7;
+        }
+        
+        .specs p {
+            font-size: 16px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .specs p strong i {
+            color: #2D9CD8; /* Icônes en bleu vif pour dynamiser le tout */
+            font-size: 18px;
+            width: 24px; /* Largeur fixe pour aligner parfaitement le texte */
+            text-align: center;
+        }
+        
+        /* --- TEXTE DE DESCRIPTION --- */
+        .description-box {
+            font-size: 16px;
+            color: #444;
+            border-top: 1px solid #eeeeee;
+            padding-top: 20px;
+            margin-top: 25px;
+        }
+
+        .description-box strong {
+            color: #0A3663;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        /* --- ANIMATION --- */
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(15px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            
+            .detail-section {
+                padding: 20px 15px;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .price {
+                font-size: 22px;
+            }
+
+            .specs { 
+                grid-template-columns: 1fr; /* Bascule sur une seule colonne sur mobile */
+                gap: 15px;
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="index.html#Offer" class="back-btn"><i class="fas fa-arrow-left"></i> ← Retour aux offres</a>
+    <a href="index.html#Offer" class="back-btn"><i class="fas fa-arrow-left"></i> Retour aux offres</a>
 
+    <!-- LOT 01 -->
     <section id="terrain1" class="detail-section">
         <img src="IMAGES/arbuste.jpg" alt="Terrain Bonoua 1">
         <h2>Terrain Bonoua - Lot 01</h2>
@@ -58,9 +179,13 @@
             <p><strong><i class="fas fa-file-alt"></i> Document :</strong> ACD en cours</p>
             <p><strong><i class="fas fa-check-circle"></i> État :</strong> Prêt à bâtir</p>
         </div>
-        <p><strong>Description :</strong> Un emplacement stratégique idéal pour une résidence familiale ou un investissement locatif.</p>
+        <div class="description-box">
+            <strong>Description :</strong> 
+            <p>Un emplacement stratégique idéal pour une résidence familiale ou un investissement locatif.</p>
+        </div>
     </section>
 
+    <!-- LOT 02 (ROKIA) -->
     <section id="terrain2" class="detail-section">
         <img src="IMAGES/Rokia.jpeg" alt="Terrain Bonoua 2">
         <h2>Terrain Bonoua - Lot 02 (Rokia)</h2>
@@ -71,9 +196,13 @@
             <p><strong><i class="fas fa-file-alt"></i> Document :</strong> Approuvé</p>
             <p><strong><i class="fas fa-check-circle"></i> État :</strong> Zone habitée</p>
         </div>
-        <p><strong>Description :</strong> Terrain situé dans le secteur Rokia, bénéficiant d'un accès direct aux réseaux d'eau et d'électricité.</p>
+        <div class="description-box">
+            <strong>Description :</strong> 
+            <p>Terrain situé dans le secteur Rokia, bénéficiant d'un accès direct aux réseaux d'eau et d'électricité.</p>
+        </div>
     </section>
 
+    <!-- LOT 03 -->
     <section id="terrain3" class="detail-section">
         <img src="IMAGES/terrain.jpg" alt="Terrain Bonoua 3">
         <h2>Terrain Bonoua - Lot 03</h2>
@@ -82,53 +211,94 @@
             <p><strong><i class="fas fa-map-marker-alt"></i> Ville :</strong> Bonoua</p>
             <p><strong><i class="fas fa-expand"></i> Superficie :</strong> 500 m²</p>
             <p><strong><i class="fas fa-file-alt"></i> Document :</strong> AV</p>
+            <p><strong><i class="fas fa-check-circle"></i> État :</strong> Non spécifié</p>
         </div>
-        <p><strong>Description :</strong> Site panoramique avec une excellente vue, parfait pour un projet de villa.</p>
+        <div class="description-box">
+            <strong>Description :</strong> 
+            <p>Site panoramique avec une excellente vue, parfait pour un projet de villa.</p>
+        </div>
     </section>
 
+    <!-- LOT 04 -->
     <section id="terrain4" class="detail-section">
         <img src="IMAGES/terrain.jpg" alt="Terrain Bonoua 4">
         <h2>Terrain Bonoua - Lot 04</h2>
         <p class="price">300.000 FCFA</p>
         <div class="specs">
+            <p><strong><i class="fas fa-map-marker-alt"></i> Ville :</strong> Bonoua</p>
             <p><strong><i class="fas fa-expand"></i> Superficie :</strong> 500 m²</p>
+            <p><strong><i class="fas fa-file-alt"></i> Document :</strong> En cours</p>
             <p><strong><i class="fas fa-check-circle"></i> État :</strong> Plat</p>
         </div>
-        <p><strong>Description :</strong> Terrain décapé et borné, prêt pour la mise en valeur.</p>
+        <div class="description-box">
+            <strong>Description :</strong> 
+            <p>Terrain décapé et borné, prêt pour la mise en valeur.</p>
+        </div>
     </section>
 
+    <!-- LOT 05 -->
     <section id="terrain5" class="detail-section">
         <img src="IMAGES/terrain.jpg" alt="Terrain Bonoua 5">
         <h2>Terrain Bonoua - Lot 05</h2>
         <p class="price">300.000 FCFA</p>
-        <p><strong>Description :</strong> Zone en plein essor, forte plus-value garantie d'ici 2 ans.</p>
+        <div class="specs">
+            <p><strong><i class="fas fa-map-marker-alt"></i> Ville :</strong> Bonoua</p>
+            <p><strong><i class="fas fa-expand"></i> Superficie :</strong> 500 m²</p>
+        </div>
+        <div class="description-box">
+            <strong>Description :</strong> 
+            <p>Zone en plein essor, forte plus-value garantie d'ici 2 ans.</p>
+        </div>
     </section>
 
+    <!-- LOT 06 -->
     <section id="terrain6" class="detail-section">
         <img src="IMAGES/terrain.jpg" alt="Terrain Bonoua 6">
         <h2>Terrain Bonoua - Lot 06</h2>
         <p class="price">300.000 FCFA</p>
-        <p><strong>Description :</strong> Emplacement calme, idéal pour une retraite paisible loin du bruit.</p>
+        <div class="specs">
+            <p><strong><i class="fas fa-map-marker-alt"></i> Ville :</strong> Bonoua</p>
+            <p><strong><i class="fas fa-expand"></i> Superficie :</strong> 500 m²</p>
+        </div>
+        <div class="description-box">
+            <strong>Description :</strong> 
+            <p>Emplacement calme, idéal pour une retraite paisible loin du bruit.</p>
+        </div>
     </section>
 
+    <!-- LOT 07 -->
     <section id="terrain7" class="detail-section">
         <img src="IMAGES/terrain.jpg" alt="Terrain Bonoua 7">
         <h2>Terrain Bonoua - Lot 07</h2>
         <p class="price">300.000 FCFA</p>
-        <p><strong>Description :</strong> Terrain facile d'accès, à seulement 10 minutes du centre-ville.</p>
+        <div class="specs">
+            <p><strong><i class="fas fa-map-marker-alt"></i> Ville :</strong> Bonoua</p>
+            <p><strong><i class="fas fa-expand"></i> Superficie :</strong> 500 m²</p>
+        </div>
+        <div class="description-box">
+            <strong>Description :</strong> 
+            <p>Terrain facile d'accès, à seulement 10 minutes du centre-ville.</p>
+        </div>
     </section>
 
+    <!-- LOT 08 -->
     <section id="terrain8" class="detail-section">
         <img src="IMAGES/terrain.jpg" alt="Terrain Bonoua 8">
         <h2>Terrain Bonoua - Lot 08</h2>
         <p class="price">300.000 FCFA</p>
-        <p><strong>Description :</strong> Dernière opportunité sur ce site exceptionnel. À saisir rapidement.</p>
+        <div class="specs">
+            <p><strong><i class="fas fa-map-marker-alt"></i> Ville :</strong> Bonoua</p>
+            <p><strong><i class="fas fa-expand"></i> Superficie :</strong> 500 m²</p>
+        </div>
+        <div class="description-box">
+            <strong>Description :</strong> 
+            <p>Dernière opportunité sur ce site exceptionnel. À saisir rapidement.</p>
+        </div>
     </section>
 
 </div>
 
 <script>
-    // Pour recharger la vue si on clique sur un autre lien sans quitter la page
     window.addEventListener('hashchange', function() {
         window.location.reload();
     });
