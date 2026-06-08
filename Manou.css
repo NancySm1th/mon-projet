@@ -11,7 +11,8 @@ html {
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: beige;
+    background-color: #f5f5dc; /* beige plus doux */
+    color: #222;
 }
 
 .container {
@@ -20,7 +21,7 @@ body {
     padding: 0 20px;
 }
 
-/* --- HEADER & STICKY --- */
+/* --- HEADER --- */
 header.sticky-header {
     width: 100%;
     color: #fff;
@@ -28,14 +29,8 @@ header.sticky-header {
     padding: 15px;
     position: absolute;
     top: 0;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(20px);
     transition: all 0.3s ease;
-}
-
-header.sticky-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 header.sticky-header.sticky {
@@ -44,20 +39,9 @@ header.sticky-header.sticky {
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-.sticky-header {
-    height: 88px;
-}
-
-.sticky-header .container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
 /* --- LOGO --- */
 .logo-img {
     max-height: 55px;
-    width: auto;
     filter: brightness(0) invert(1);
 }
 
@@ -70,8 +54,6 @@ header.sticky-header.sticky {
 .logo-text {
     font-size: 12px;
     color: white;
-    margin-top: 2px;
-    letter-spacing: 1px;
     font-weight: bold;
 }
 
@@ -95,9 +77,14 @@ nav {
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
+    transition: 0.3s;
 }
 
-/* --- HERO SECTION --- */
+#nav-menu li a:hover {
+    color: #2D9CD8;
+}
+
+/* --- HERO --- */
 .hero-section {
     height: 100vh;
     background: url(IMAGES/hero.jpg) no-repeat center center/cover;
@@ -106,11 +93,9 @@ nav {
 
 .hero-section .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0,0,0,0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,11 +107,16 @@ nav {
 }
 
 .hero-section .cta {
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: 2px solid #2D9CD8;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.hero-section .cta:hover {
+    background: #2D9CD8;
 }
 
 /* --- PRESTATIONS --- */
@@ -137,49 +127,34 @@ nav {
 
 .grid-services {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    margin-top: 30px;
 }
 
 .card {
     background: #fff;
-    border: 1px solid #eee;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.card-icon {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-/* --- SECTION VIDÉO --- */
-.video-section {
-    padding: 60px 0;
-    background: #f4f4f4;
-    text-align: center;
-}
-
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
+/* --- 🎥 VIDÉO (CORRIGÉ + PLUS MODERNE) --- */
 .video-card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 50px auto;
+}
+
+.video-card video {
+    width: 90%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* --- OFFRES --- */
@@ -194,11 +169,11 @@ nav {
 }
 
 .Offert-card {
-    background-color: #fff;
+    background: #fff;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 .Offert-card:hover {
@@ -211,21 +186,7 @@ nav {
     object-fit: cover;
 }
 
-.Offert-info {
-    padding: 20px;
-    text-align: center;
-}
-
-.Offert-info .btn {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #2D9CD8;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* --- CONTACT CORRIGÉ --- */
+/* --- CONTACT --- */
 .contact-section {
     background-color: #333;
     color: #fff;
@@ -233,25 +194,13 @@ nav {
     text-align: center;
 }
 
-.contact-section h2 {
-    margin-bottom: 30px;
-}
-
-/* FLEX */
 .contact-flex-layout {
     display: flex;
     gap: 30px;
-    align-items: stretch;
 }
 
-/* FORMULAIRE */
 .form-area {
     flex: 1;
-}
-
-.form-area form {
-    display: flex;
-    flex-direction: column;
 }
 
 .form-area input,
@@ -265,12 +214,7 @@ nav {
     border-radius: 5px;
 }
 
-/* BOUTON */
-.btn-center-container {
-    display: flex;
-    justify-content: flex-start;
-}
-
+/* BUTTON */
 .btn-center-container button {
     padding: 10px 30px;
     background: #2D9CD8;
@@ -278,7 +222,6 @@ nav {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 .btn-center-container button:hover {
@@ -293,28 +236,17 @@ nav {
     overflow: hidden;
 }
 
-.map-area iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* --- FOOTER --- */
-footer {
-    background: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-/* --- MENU MOBILE --- */
-#humberger {
+/* --- 🍔 MENU MOBILE CORRIGÉ --- */
+#hamburger {
     display: none;
     cursor: pointer;
+    font-size: 28px;
+    color: white;
 }
 
 @media (max-width: 768px) {
 
-    #humberger {
+    #hamburger {
         display: block;
     }
 
@@ -324,16 +256,16 @@ footer {
         background: #1a1a1a;
         position: absolute;
         top: 70px;
-        left: 0;
-        width: 100%;
-        padding: 20px;
+        right: 0;
+        width: 220px;
+        padding: 15px;
+        border-radius: 10px;
     }
 
     #nav-menu.show {
         display: flex;
     }
 
-    /* CONTACT RESPONSIVE */
     .contact-flex-layout {
         flex-direction: column;
     }
