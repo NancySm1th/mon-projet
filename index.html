@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Intégration de Bootstrap Icons pour correspondre exactement au site modèle -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="icon" type="image/jpg" href="IMAGES/Alliance.jpg">
     <style>
         /* --- DESIGN GLOBAL PROFESSIONNEL --- */
@@ -103,7 +105,7 @@
         /* --- HERO SECTION --- */
         .hero-section {
             height: 75vh;
-            background: url('IMAGES/terrain.jpg') no-repeat center center/cover; /* Image de secours par défaut */
+            background: url('IMAGES/terrain.jpg') no-repeat center center/cover; 
             position: relative;
         }
 
@@ -231,7 +233,7 @@
             padding-left: 5px;
         }
 
-        /* --- AGRANDISSEMENT DE LA ZONE VIDÉO --- */
+        /* --- ZONE VIDÉO --- */
         .video-container-box {
             margin-top: 90px;
             text-align: center;
@@ -241,7 +243,7 @@
         }
 
         .video-wrapper {
-            max-width: 950px; /* Vidéo beaucoup plus grande et immersive */
+            max-width: 950px; 
             margin: 30px auto 0 auto;
             border-radius: var(--border-radius);
             overflow: hidden;
@@ -316,59 +318,249 @@
             color: var(--dark-color);
         }
 
-        /* --- SECTION CONTACT & FORMULAIRE --- */
-        .contact-section {
-            background-color: #ffffff;
+        /* --- STYLE INSPIRÉ DU SITE MODÈLE (CONTACT & FOOTER) --- */
+        .model-contact-section {
+            background-color: #0b0c10;
+            color: #ffffff;
+            padding: 90px 0;
         }
 
-        .contact-flex-layout {
+        .model-contact-section h2 {
+            color: #ffffff !important;
+        }
+
+        .contact-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+            align-items: start;
+        }
+
+        .contact-info-panel {
             display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
+            flex-direction: column;
+            gap: 30px;
         }
 
-        #contact-form input, #contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #dddddd;
+        .info-item-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
             border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .info-item-box i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .info-item-box p {
+            margin: 0;
+            font-size: 1rem;
+            color: #c5c6c7;
+        }
+
+        .model-form-box {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .model-form-group {
+            margin-bottom: 25px;
+        }
+
+        .model-form-group input, .model-form-group textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 5px;
+            color: #ffffff;
             font-family: 'Poppins', sans-serif;
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: var(--transition);
             box-sizing: border-box;
         }
 
-        #contact-form input:focus, #contact-form textarea:focus {
-            border-color: var(--primary-color);
+        .model-form-group input:focus, .model-form-group textarea:focus {
             outline: none;
-            box-shadow: 0 0 8px rgba(204, 164, 59, 0.2);
+            border-bottom-color: var(--primary-color);
         }
 
-        #contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        #contact-form button {
+        .model-form-box button {
             background: var(--primary-color);
             color: var(--dark-color);
             border: none;
-            padding: 14px 40px;
-            font-size: 1rem;
+            padding: 14px 35px;
             font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            border-radius: 50px;
+            border-radius: 4px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(204, 164, 59, 0.3);
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .model-form-box button:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* MAP DE SÉCURITÉ EN DESSOUS */
+        .model-map-wrapper {
+            margin-top: 50px;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .model-map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* FOOTER MODÈLE COMPLET */
+        .model-footer {
+            background-color: #000000;
+            color: #666666;
+            padding: 60px 0 30px 0;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand-col h4 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin: 0 0 15px 0;
+            letter-spacing: 1px;
+        }
+
+        .footer-brand-col p {
+            line-height: 1.6;
+            color: #999999;
+        }
+
+        .footer-links-col h5, .footer-contact-col h5 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin: 0 0 20px 0;
+            font-weight: 600;
+        }
+
+        .footer-links-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links-col a {
+            color: #999999;
+            text-decoration: none;
             transition: var(--transition);
         }
 
-        #contact-form button:hover {
-            background: var(--dark-color);
+        .footer-links-col a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .footer-contact-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            color: #999999;
+        }
+
+        .footer-contact-col i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .footer-bottom-bar {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom-bar p {
+            margin: 0;
+        }
+
+        .social-icons-box {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons-box a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
             color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .social-icons-box a:hover {
+            background: var(--primary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        /* BOUTON FLOTTANT WHATSAPP (MÊME STYLE QUE LE SITE EXEMPLE) */
+        .whatsapp-floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 9999;
+            text-decoration: none;
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .whatsapp-floating-btn:hover {
+            transform: scale(1.1);
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
         }
 
         /* --- RESPONSIVE MOBILE --- */
@@ -392,6 +584,14 @@
             #nav-menu.show { display: flex; }
             .hero-content h1 { font-size: 2.2rem; }
             .video-container-box { padding: 30px 15px; }
+            
+            .contact-grid-layout, .footer-main-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom-bar {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -400,10 +600,10 @@
 <header class="sticky-header">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px;">
         <div class="logo" style="display: flex; align-items: center; gap: 12px;">
-            <img src="IMAGES/Alliance.svg" alt="Logo Alliance Sud-Est" class="logo-img" style="height: 45px;">
-            <div class="logo-brand" style="display: flex; flex-direction: column;">
-                <span class="logo-text" style="font-weight: 800; font-size: 1.4rem; color: #ffffff; letter-spacing: 1px; line-height: 1;">ALLIANCE</span>
-                <span class="logo-text" style="font-weight: 500; font-size: 0.9rem; color: var(--primary-color); letter-spacing: 0.5px; margin-top: 2px;">Sud-Est</span>
+            <img src="IMAGES/Alliance.svg" alt="Logo Alliance Sud-Est" class="logo-img" style="height: 45px; display: block;">
+            <div class="logo-brand" style="display: flex; flex-direction: column; justify-content: center; line-height: 1.2;">
+                <span class="logo-text" style="font-weight: 800; font-size: 1.4rem; color: #ffffff; letter-spacing: 1px; margin: 0; padding: 0;">ALLIANCE</span>
+                <span class="logo-text" style="font-weight: 500; font-size: 0.95rem; color: var(--primary-color); letter-spacing: 0.5px; margin: 0; padding: 0;">Sud-Est</span>
             </div>
         </div>
         <div id="humberger">
@@ -487,7 +687,6 @@
             </div>
         </div>
 
-        <!-- ZONE VIDÉO INTÉGRÉE ET AGRANDIE -->
         <div class="video-container-box">
             <div class="section-title-wrapper">
                 <h2>EXEMPLES DE TERRAINS</h2>
@@ -546,42 +745,109 @@
     </div>
 </section>
 
-<section class="contact-section" id="contact" style="padding: 90px 0;">
+<!-- SECTION CONTACT NOUVELLE VERSION SOMBRE INSPIREE DE L'EXEMPLE -->
+<section class="model-contact-section" id="contact">
     <div class="container">
         <div class="section-title-wrapper" style="text-align: center;">
             <h2>CONTACTEZ-NOUS</h2>
         </div>
-        <p style="text-align:center; margin-bottom:40px; color: var(--text-muted); font-size: 1.05rem;">Une question ? Un projet d'acquisition ? Écrivez-nous.</p>
+        <p style="text-align:center; margin-bottom:40px; color: #a8a8a8; font-size: 1.05rem;">Une question ? Un projet d'acquisition ? Écrivez-nous.</p>
 
-        <div class="contact-flex-layout">
-            <!-- FORMULAIRE -->
-            <div class="form-area">
-                <form id="contact-form">
-                    <input type="text" name="name" placeholder="Nom complet" required>
-                    <input type="email" name="email" placeholder="Adresse Email" required>
-                    <textarea name="message" placeholder="Votre message ou détails de votre projet foncier..." required></textarea>
-
-                    <div class="btn-center-container">
-                        <button type="submit"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Envoyer le message</button>
+        <div class="contact-grid-layout">
+            <!-- PANNEAU D'INFORMATIONS (Comme le site modèle) -->
+            <div class="contact-info-panel">
+                <div class="info-item-box">
+                    <i class="bi bi-geo-alt"></i>
+                    <div>
+                        <p style="font-weight: 600; color: #fff;">Notre Emplacement</p>
+                        <p style="font-size: 0.9rem;">Bonoua, Côte d'Ivoire</p>
                     </div>
+                </div>
+                <div class="info-item-box">
+                    <i class="bi bi-envelope"></i>
+                    <div>
+                        <p style="font-weight: 600; color: #fff;">Par Email</p>
+                        <p style="font-size: 0.9rem;">contact@alliancesudest.com</p>
+                    </div>
+                </div>
+                <div class="info-item-box">
+                    <i class="bi bi-phone"></i>
+                    <div>
+                        <p style="font-weight: 600; color: #fff;">Appelez-nous</p>
+                        <p style="font-size: 0.9rem;">+225 07 00 00 00 00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULAIRE AUX LIGNES ÉPURÉES (Comme le site modèle) -->
+            <div class="model-form-box">
+                <form id="contact-form">
+                    <div class="model-form-group">
+                        <input type="text" name="name" placeholder="Nom complet" required>
+                    </div>
+                    <div class="model-form-group">
+                        <input type="email" name="email" placeholder="Adresse Email" required>
+                    </div>
+                    <div class="model-form-group">
+                        <textarea name="message" placeholder="Votre message ou détails de votre projet foncier..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Envoyer le message</button>
                 </form>
             </div>
+        </div>
 
-            <!-- CARTE -->
-            <div class="map-area">
-                <iframe 
-                src="https://maps.google.com/maps?q=Bonoua,Cote%20d%20Ivoire&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                allowfullscreen=""
-                loading="lazy">
-                </iframe>
-            </div>
+        <!-- ZONE CARTE DE SÉCURITÉ EN DESSOUS -->
+        <div class="model-map-wrapper">
+            <iframe 
+            src="https://maps.google.com/maps?q=Bonoua,Cote%20d%20Ivoire&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            allowfullscreen=""
+            loading="lazy">
+            </iframe>
         </div>
     </div>
 </section>
 
-<footer style="background: #111111; color: #aaaaaa; text-align: center; padding: 40px 20px; font-size: 0.95rem; border-top: 3px solid var(--primary-color);">
-    <p style="margin: 0; letter-spacing: 0.5px;">&copy; 2026 ALLIANCE SUD-EST SARL. Tous droits réservés.</p>
+<!-- FOOTER SOMBRE ET COMPLET SUR LE MODÈLE DU SITE EXEMPLE -->
+<footer class="model-footer">
+    <div class="container">
+        <div class="footer-main-grid">
+            <div class="footer-brand-col">
+                <h4>ALLIANCE SUD-EST</h4>
+                <p>Votre partenaire foncier de confiance en Côte d'Ivoire. Nous mettons à votre disposition des espaces sécurisés et viabilisés pour concrétiser sereinement tous vos projets immobiliers.</p>
+            </div>
+            <div class="footer-links-col">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#prestation">Prestations</a></li>
+                    <li><a href="#Offer">Nos Offres</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact-col">
+                <h5>Informations</h5>
+                <ul>
+                    <li><i class="bi bi-geo-alt-fill"></i> Bonoua, Côte d'Ivoire</li>
+                    <li><i class="bi bi-telephone-fill"></i> +225 07 00 00 00 00</li>
+                    <li><i class="bi bi-envelope-fill"></i> contact@alliancesudest.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>&copy; 2026 ALLIANCE SUD-EST SARL. Tous droits réservés.</p>
+            <div class="social-icons-box">
+                <a href="https://google.com" target="_blank"><i class="bi bi-google"></i></a>
+                <a href="https://wa.me/2250700000000" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
 </footer>
+
+<!-- ICÔNE FLOTTANTE WHATSAPP (Identique au comportement du site exemple) -->
+<a href="https://wa.me/2250700000000" class="whatsapp-floating-btn" target="_blank" title="Discuter sur WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
 
 <script>
 function toggleText(id, element) {
@@ -595,7 +861,6 @@ function toggleText(id, element) {
     }
 }
 
-// GESTION DU MENU BURGER
 const burger = document.getElementById('humberger');
 const menu = document.getElementById('nav-menu');
 
@@ -609,7 +874,7 @@ burger.addEventListener('click', function() {
 
 <script>
 (function(){
-  emailjs.init("97HiaqvNMCTI4f2E6"); // TA PUBLIC KEY
+  emailjs.init("97HiaqvNMCTI4f2E6"); 
 })();
 </script>
 
