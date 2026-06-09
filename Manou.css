@@ -1,681 +1,630 @@
-/* --- CONFIGURATION GÉNÉRALE & CHARTES DE COULEURS --- */
-:root {
-    --primary-color: #0A3663;    /* Superbe Bleu Royal institutionnel et sécurisant */
-    --accent-color: #2D9CD8;     /* Le bleu vif d'origine pour les éléments d'action cliquables */
-    --primary-light: #f0f5fa;    /* Fond bleu-blanc très clair pour remplacer le gris/beige */
-    --dark-color: #1a1a1a;       /* Noir doux pour les textes et les sections de fin */
-    --border-radius: 10px;
-    --transition: all 0.3s ease;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Poppins", sans-serif;
-    background-color: #ffffff; /* Fini le beige brut, fond blanc épuré */
-    color: var(--dark-color);
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* --- HEADER & STICKY --- */
-header.sticky-header {
-    width: 100%;
-    color: #fff;
-    z-index: 10000 !important; /* Priorité maximale pour ne pas être masqué */
-    padding: 15px;
-    position: fixed; /* Reste fixé au défilement de manière fluide */
-    top: 0;
-    left: 0;
-    background-color: var(--primary-color); /* Le menu s'habille de ton bleu corporate */
-    border-bottom: 3px solid var(--accent-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    transition: var(--transition);
-}
-
-header.sticky-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header.sticky-header.sticky {
-    position: fixed;
-    background-color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.sticky-header {
-    height: 88px;
-}
-
-.sticky-header .container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-/* --- LOGO --- */
-.logo-img {
-    max-height: 55px;
-    width: auto;
-    /* Conserve tes filtres d'origine si ton image doit rester blanche */
-    filter: brightness(0) invert(1); 
-}
-
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo-text {
-    font-size: 12px;
-    color: white;
-    margin-top: 2px;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
-
-/* --- NAVIGATION --- */
-nav {
-    display: flex;
-    align-items: center;
-}
-
-#nav-menu {
-    display: flex;
-    list-style: none;
-}
-
-#nav-menu li {
-    margin-left: 20px;
-}
-
-#nav-menu li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    transition: var(--transition);
-    padding: 5px 0;
-    position: relative;
-}
-
-/* Effet moderne de ligne sous le menu au survol */
-#nav-menu li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: var(--transition);
-}
-
-#nav-menu li a:hover {
-    color: var(--accent-color);
-}
-
-#nav-menu li a:hover::after {
-    width: 100%;
-}
-
-/* --- HERO SECTION --- */
-.hero-section {
-    height: 75vh; /* Hauteur ajustée pour un rendu écran plus pro */
-    background: url(IMAGES/hero.jpg) no-repeat center center/cover;
-    position: relative;
-}
-
-.hero-section .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-content {
-    color: #fff;
-    text-align: center;
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.4);
-}
-
-.hero-section .cta {
-    padding: 14px 35px;
-    background-color: var(--accent-color);
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-    border-radius: 50px; /* Bouton arrondi haut de gamme */
-    border: none;
-    box-shadow: 0 4px 15px rgba(45, 156, 216, 0.4);
-    transition: var(--transition);
-    display: inline-block;
-}
-
-.hero-section .cta:hover {
-    transform: translateY(-3px);
-    background-color: var(--primary-color);
-    box-shadow: 0 6px 20px rgba(10, 54, 99, 0.4);
-}
-
-/* --- PRESTATIONS & ACCUEIL --- */
-#about h2, #prestation h2, #Offer h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--primary-color); /* Titres en bleu royal */
-    text-transform: uppercase;
-}
-
-.prestation-section {
-    padding: 80px 0;
-    background: #fff;
-}
-
-.grid-services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.card {
-    background: #fff;
-    border: 1px solid #f0f0f0;
-    padding: 35px 25px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-    transition: var(--transition);
-    text-align: left;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(10, 54, 99, 0.1);
-    border-color: var(--accent-color);
-}
-
-.card-icon {
-    font-size: 35px;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-}
-
-.card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    color: var(--dark-color);
-}
-
-.card p {
-    color: #666;
-    font-size: 0.95rem;
-}
-
-.card a {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-/* --- SECTION VIDÉO --- */
-.video-card {
-    background: #f8f9fa;
-    padding: 50px 30px;
-    border-radius: 12px;
-    box-shadow: none;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.video-card h2 p {
-    color: var(--primary-color);
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 25px;
-}
-
-.video-card video {
-    width: 90% !important; /* Vidéo agrandie de manière significative */
-    max-width: 900px;
-    height: auto !important;
-    border-radius: var(--border-radius);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    background-color: #000;
-}
-
-/* --- OFFRES --- */
-#Offer {
-    padding: 90px 0;
-    background-color: #fcfcfc;
-}
-
-.Offert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.Offert-card {
-    background-color: #fff;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    transition: var(--transition);
-    border: 1px solid #f0f0f0;
-}
-
-.Offert-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-
-.img-container {
-    overflow: hidden;
-    position: relative;
-}
-
-.Offert-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.Offert-card:hover img {
-    transform: scale(1.05); /* Effet zoom moderne au survol */
-}
-
-.Offert-info {
-    padding: 25px;
-    text-align: left;
-}
-
-.Offert-info h3 {
-    font-size: 1.2rem;
-    color: var(--dark-color);
-    margin-bottom: 5px;
-}
-
-.Offert-info p {
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1.15rem;
-    margin-bottom: 20px;
-}
-
-.Offert-info .btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 12px;
-    background-color: var(--primary-color);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: var(--transition);
-}
-
-.Offert-info .btn:hover {
-    background-color: var(--accent-color);
-}
-
-/* --- NOUVELLE ARCHITECTURE DE CONTACT ET FOOTER (STYLE SITE MODÈLE) --- */
-
-.model-contact-section {
-    background-color: #0b0c10; /* Fond noir ultra-moderne */
-    color: #ffffff;
-    padding: 90px 0;
-}
-
-.model-contact-section h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #ffffff !important;
-    text-transform: uppercase;
-    position: relative;
-    display: inline-block;
-}
-
-.model-contact-section .section-title-wrapper h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-color); /* Rappel subtil de ton bleu vif */
-    margin: 10px auto 0 auto;
-}
-
-.contact-grid-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    margin-top: 50px;
-    align-items: start;
-}
-
-.contact-info-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    text-align: left;
-}
-
-.info-item-box {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 4px solid var(--accent-color); /* Ligne d'accentuation en bleu vif */
-}
-
-.info-item-box i {
-    font-size: 1.8rem;
-    color: var(--accent-color);
-}
-
-.info-item-box p {
-    margin: 0;
-    font-size: 1rem;
-    color: #c5c6c7;
-}
-
-/* FORMULAIRE ÉPURÉ AUX LIGNES MINIMALISTES */
-.model-form-box {
-    background: rgba(255, 255, 255, 0.02);
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.model-form-group {
-    margin-bottom: 25px;
-}
-
-.model-form-group input, 
-.model-form-group textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    padding: 12px 5px;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    transition: var(--transition);
-    box-sizing: border-box;
-}
-
-.model-form-group input:focus, 
-.model-form-group textarea:focus {
-    outline: none;
-    border-bottom-color: var(--accent-color); /* Soulignement au focus avec ton bleu actif */
-}
-
-.model-form-box button {
-    background: var(--accent-color);
-    color: #ffffff;
-    border: none;
-    padding: 14px 35px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    transition: var(--transition);
-}
-
-.model-form-box button:hover {
-    background: #ffffff;
-    color: #000000;
-}
-
-/* MODULE CARTE MAPS SÉCURISÉ */
-.model-map-wrapper {
-    margin-top: 50px;
-    border-radius: 12px;
-    overflow: hidden;
-    height: 350px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.model-map-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-/* FOOTER COMPLET DU SITE EXEMPLE */
-.model-footer {
-    background-color: #000000; /* Fond noir profond */
-    color: #999999;
-    padding: 60px 0 30px 0;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    text-align: left;
-}
-
-.footer-main-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-brand-col h4 {
-    color: #ffffff;
-    font-size: 1.4rem;
-    margin: 0 0 15px 0;
-    letter-spacing: 1px;
-}
-
-.footer-brand-col p {
-    line-height: 1.6;
-    color: #999999;
-}
-
-.footer-links-col h5, 
-.footer-contact-col h5 {
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin: 0 0 20px 0;
-    font-weight: 600;
-}
-
-.footer-links-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.footer-links-col a {
-    color: #999999;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.footer-links-col a:hover {
-    color: var(--accent-color);
-    padding-left: 5px;
-}
-
-.footer-contact-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    color: #999999;
-}
-
-.footer-contact-col i {
-    color: var(--accent-color);
-    margin-right: 10px;
-}
-
-/* ZONE BASSE DU FOOTER (LIENS SOCIAUX GOOGLE / WHATSAPP) */
-.footer-bottom-bar {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-bottom-bar p {
-    margin: 0;
-}
-
-.social-icons-box {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons-box a {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: var(--transition);
-    font-size: 1.1rem;
-}
-
-.social-icons-box a:hover {
-    background: var(--accent-color);
-    color: #ffffff;
-    transform: translateY(-3px);
-}
-
-/* BOUTON FLOTTANT WHATSAPP TECHNIQUE */
-.whatsapp-floating-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: #ffffff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    z-index: 9999;
-    text-decoration: none;
-    font-size: 2rem;
-    transition: var(--transition);
-}
-
-.whatsapp-floating-btn:hover {
-    transform: scale(1.1);
-    color: #ffffff;
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-}
-
-/* --- MENU MOBILE RESPONSIVE --- */
-#humberger {
-    display: none;
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 1.5rem;
-}
-
-@media (max-width: 768px) {
-    #humberger {
-        display: block;
-    }
-
-    #nav-menu {
-        display: none;
-        flex-direction: column;
-        background: var(--primary-color);
-        position: absolute;
-        top: 88px;
-        left: 0;
-        width: 100%;
-        padding: 25px;
-        border-bottom: 4px solid var(--accent-color);
-        gap: 15px;
-    }
-    
-    #nav-menu li {
-        margin-left: 0;
-        text-align: center;
-    }
-
-    #nav-menu.show {
-        display: flex;
-    }
-
-    .contact-grid-layout, 
-    .footer-main-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-bottom-bar {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-    
-    .video-card {
-        padding: 30px 10px;
-    }
-    
-    .video-card video {
-        width: 100% !important;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALLIANCE SUD-EST SARL</title>
+    <link rel="stylesheet" href="Manou.css">
+    <!-- Polices premium pour l'immobilier -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/jpg" href="IMAGES/Alliance.jpg">
+    <style>
+        /* --- DESIGN GLOBAL PROFESSIONNEL --- */
+        :root {
+            --primary-color: #cca43b; /* Or Corporate pour Alliance Sud-Est */
+            --dark-color: #111111;
+            --light-bg: #f8f9fa;
+            --text-color: #333333;
+            --text-muted: #666666;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            padding-top: 80px; 
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: #ffffff;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        .sticky-header {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000 !important;
+            background-color: rgba(26, 26, 26, 0.98);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        #nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        #nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        #nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        #nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        #humberger {
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            height: 75vh;
+            background: url('IMAGES/terrain.jpg') no-repeat center center/cover; /* Image de secours par défaut */
+            position: relative;
+        }
+
+        .overlay {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            color: #ffffff;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            color: #f1f1f1;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .cta {
+            background-color: var(--primary-color);
+            color: var(--dark-color) !important;
+            text-transform: uppercase;
+            padding: 14px 35px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(204, 164, 59, 0.4);
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(204, 164, 59, 0.6);
+            background-color: #ffd053;
+        }
+
+        /* --- TITRES DE SECTIONS --- */
+        .section-title-wrapper h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .section-title-wrapper h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0 auto;
+        }
+
+        /* --- PRESTATIONS (GRID SERVICES) --- */
+        .prestation-section {
+            padding: 90px 0;
+            background-color: #ffffff;
+        }
+
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .grid-services .card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid #eee;
+            text-align: left;
+        }
+
+        .grid-services .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            border-color: var(--primary-color);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .grid-services .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .grid-services .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 15px;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--dark-color);
+            padding-left: 5px;
+        }
+
+        /* --- AGRANDISSEMENT DE LA ZONE VIDÉO --- */
+        .video-container-box {
+            margin-top: 90px;
+            text-align: center;
+            background: var(--light-bg);
+            padding: 60px 40px;
+            border-radius: var(--border-radius);
+        }
+
+        .video-wrapper {
+            max-width: 950px; /* Vidéo beaucoup plus grande et immersive */
+            margin: 30px auto 0 auto;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            background: #000;
+        }
+
+        /* --- OFFRES (TERRAINS EN VENTE) --- */
+        .Offert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .Offert-card {
+            background: #ffffff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: var(--transition);
+        }
+
+        .Offert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .Offert-card:hover .img-container img {
+            transform: scale(1.05);
+        }
+
+        .Offert-info {
+            padding: 25px;
+        }
+
+        .Offert-info h3 {
+            font-size: 1.25rem;
+            margin: 0 0 10px 0;
+            color: var(--dark-color);
+        }
+
+        .price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin: 0 0 20px 0;
+        }
+
+        .Offert-info .btn {
+            display: block;
+            text-align: center;
+            background: var(--dark-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .Offert-info .btn:hover {
+            background: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        /* --- SECTION CONTACT & FORMULAIRE --- */
+        .contact-section {
+            background-color: #ffffff;
+        }
+
+        .contact-flex-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        #contact-form input, #contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            box-sizing: border-box;
+        }
+
+        #contact-form input:focus, #contact-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 8px rgba(204, 164, 59, 0.2);
+        }
+
+        #contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        #contact-form button {
+            background: var(--primary-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 14px 40px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(204, 164, 59, 0.3);
+            transition: var(--transition);
+        }
+
+        #contact-form button:hover {
+            background: var(--dark-color);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            #humberger { display: block; }
+            
+            #nav-menu {
+                display: none;
+                flex-direction: column;
+                background: rgba(26, 26, 26, 0.98);
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                padding: 30px;
+                box-sizing: border-box;
+                gap: 20px;
+                border-bottom: 2px solid var(--primary-color);
+            }
+            
+            #nav-menu.show { display: flex; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .video-container-box { padding: 30px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="sticky-header">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px;">
+        <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+            <img src="IMAGES/Alliance.svg" alt="Logo Alliance Sud-Est" class="logo-img" style="height: 45px;">
+            <div class="logo-brand" style="display: flex; flex-direction: column;">
+                <span class="logo-text" style="font-weight: 800; font-size: 1.4rem; color: #ffffff; letter-spacing: 1px; line-height: 1;">ALLIANCE</span>
+                <span class="logo-text" style="font-weight: 500; font-size: 0.9rem; color: var(--primary-color); letter-spacing: 0.5px; margin-top: 2px;">Sud-Est</span>
+            </div>
+        </div>
+        <div id="humberger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#home">ACCUEIL</a></li>
+                <li><a href="#about">À PROPOS</a></li>
+                <li><a href="#prestation">PRESTATIONS</a></li>
+                <li><a href="#Offer">OFFRES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav> 
+    </div>
+</header>
+
+<section class="hero-section" id="home">
+    <div class="overlay">
+        <div class="hero-content">
+            <h1>DÉCOUVRIR NOS TERRAINS</h1>
+            <p class="hero-subtitle">Des espaces sécurisés pour donner vie à vos projets immobiliers</p>
+            <a href="#Offer" class="cta"><i class="fas fa-search" style="margin-right: 8px;"></i>voir nos offres</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" style="padding: 90px 0; background: #fff; color: #333; text-align: center;">
+    <div class="container">
+        <div class="section-title-wrapper">
+            <h2>À PROPOS DE NOUS</h2>
+        </div>
+        <p style="max-width: 800px; margin: 25px auto; line-height: 1.9; font-size: 1.15rem; color: #555;">
+            <strong style="color: var(--dark-color); font-weight: 600;">ALLIANCE SUD-EST SARL</strong> est votre partenaire de confiance dans l'immobilier et le foncier en Côte d'Ivoire.
+        </p>
+    </div>
+</section>
+
+<section id="prestation" class="prestation-section">
+    <div class="container">
+        <div class="section-title-wrapper" style="text-align: center;">
+            <h2>NOS PRESTATIONS</h2>
+        </div>
+        <p style="text-align:center; margin-bottom:40px; color: var(--text-muted); font-size: 1.05rem;">Nos services sont conçus pour vous accompagner avec expertise.</p>
+        
+        <div class="grid-services">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-building"></i></div>
+                <h3>Gestion locative et administration</h3>
+                <p>Gestion complète de vos biens immobiliers avec rigueur.</p>
+                <p id="suite1" style="display: none; margin-top: 12px; color: #555; background: #f9f9f9; padding: 10px; border-left: 3px solid var(--primary-color);">Recherche de locataires, baux et loyers.</p>
+                <a href="javascript:void(0);" onclick="toggleText('suite1', this)" class="read-more">Lire la suite <i class="fas fa-chevron-down"></i></a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                <h3>Courtage foncier</h3>
+                <p>Accompagnement professionnel pour vos transactions.</p>
+                <p id="suite2" style="display: none; margin-top: 12px; color: #555; background: #f9f9f9; padding: 10px; border-left: 3px solid var(--primary-color);">Vérification rigoureuse des titres de propriété.</p>
+                <a href="javascript:void(0);" onclick="toggleText('suite2', this)" class="read-more">Lire la suite <i class="fas fa-chevron-down"></i></a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-home"></i></div>
+                <h3>Transactions immobilières</h3>
+                <p>Achat, vente et négociation de biens.</p>
+                <p id="suite3" style="display: none; margin-top: 12px; color: #555; background: #f9f9f9; padding: 10px; border-left: 3px solid var(--primary-color);">Expertise du marché local.</p>
+                <a href="javascript:void(0);" onclick="toggleText('suite3', this)" class="read-more">Lire la suite <i class="fas fa-chevron-down"></i></a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                <h3>Lotissement et valorisation</h3>
+                <p>Aménagement technique et mise en valeur foncière.</p>
+                <p id="suite4" style="display: none; margin-top: 12px; color: #555; background: #f9f9f9; padding: 10px; border-left: 3px solid var(--primary-color);">Bornage et optimisation.</p>
+                <a href="javascript:void(0);" onclick="toggleText('suite4', this)" class="read-more">Lire la suite <i class="fas fa-chevron-down"></i></a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                <h3>Conseil en projets</h3>
+                <p>Expertise et assistance stratégique.</p>
+                <p id="suite5" style="display: none; margin-top: 12px; color: #555; background: #f9f9f9; padding: 10px; border-left: 3px solid var(--primary-color);">Analyse de viabilité.</p>
+                <a href="javascript:void(0);" onclick="toggleText('suite5', this)" class="read-more">Lire la suite <i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+
+        <!-- ZONE VIDÉO INTÉGRÉE ET AGRANDIE -->
+        <div class="video-container-box">
+            <div class="section-title-wrapper">
+                <h2>EXEMPLES DE TERRAINS</h2>
+            </div>
+            <div class="video-wrapper">
+                <video width="100%" height="auto" controls style="display: block;">
+                    <source src="VIDEO/La planète des animaux- 4K HDR - Christian DREVET (720p, h264).mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la vidéo.
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Offer" style="padding: 90px 0; background: var(--light-bg);">
+    <div class="container">
+        <div class="section-title-wrapper" style="text-align: center;">
+            <h2>NOS OFFRES</h2>
+        </div>
+        <p style="text-align:center; margin-bottom:40px; color: var(--text-muted); font-size: 1.05rem;">Terrains en vente</p>
+        
+        <div class="Offert-grid">
+            <div class="Offert-card">
+                <div class="img-container" style="position: relative; overflow: hidden;"><img src="IMAGES/arbuste.jpg" alt="Terrain"><span class="badge" style="position: absolute; top: 15px; left: 15px; background: #2ecc71; color: #fff; padding: 6px 12px; font-size: 0.8rem; border-radius: 4px; font-weight: bold; font-family: 'Poppins',sans-serif; letter-spacing: 0.5px;">Disponible</span></div>
+                <div class="Offert-info"><h3>ABOISSO</h3><p class="price"><i class="fas fa-tag" style="font-size: 0.9rem; margin-right: 5px;"></i> 3.000.000 FCFA</p><a href="detail1.html#terrain1" class="btn">Details</a></div>
+            </div>
+            <div class="Offert-card">
+                <div class="img-container" style="position: relative; overflow: hidden;"><img src="IMAGES/Rokia.jpeg" alt="Terrain"><span class="badge" style="position: absolute; top: 15px; left: 15px; background: #2ecc71; color: #fff; padding: 6px 12px; font-size: 0.8rem; border-radius: 4px; font-weight: bold; font-family: 'Poppins',sans-serif; letter-spacing: 0.5px;">Disponible</span></div>
+                <div class="Offert-info"><h3>KRINDJABO</h3><p class="price"><i class="fas fa-tag" style="font-size: 0.9rem; margin-right: 5px;"></i> 2.000.000 FCFA</p><a href="detail1.html#terrain2" class="btn">Details</a></div>
+            </div>
+            <div class="Offert-card">
+                <div class="img-container" style="position: relative; overflow: hidden;"><img src="IMAGES/terrain.jpg" alt="Terrain"><span class="badge" style="position: absolute; top: 15px; left: 15px; background: #2ecc71; color: #fff; padding: 6px 12px; font-size: 0.8rem; border-radius: 4px; font-weight: bold; font-family: 'Poppins',sans-serif; letter-spacing: 0.5px;">Disponible</span></div>
+                <div class="Offert-info"><h3>ABY</h3><p class="price"><i class="fas fa-tag" style="font-size: 0.9rem; margin-right: 5px;"></i> 1.000.000 FCFA</p><a href="detail1.html#terrain3" class="btn">Details</a></div>
+            </div>
+            <div class="Offert-card">
+                <div class="img-container" style="position: relative; overflow: hidden;"><img src="IMAGES/terrain.jpg" alt="Terrain"><span class="badge" style="position: absolute; top: 15px; left: 15px; background: #2ecc71; color: #fff; padding: 6px 12px; font-size: 0.8rem; border-radius: 4px; font-weight: bold; font-family: 'Poppins',sans-serif; letter-spacing: 0.5px;">Disponible</span></div>
+                <div class="Offert-info"><h3>ABOISSO 2</h3><p class="price"><i class="fas fa-tag" style="font-size: 0.9rem; margin-right: 5px;"></i> 3.000.000 FCFA</p><a href="detail1.html#terrain4" class="btn">Details</a></div>
+            </div>
+            <div class="Offert-card">
+                <div class="img-container" style="position: relative; overflow: hidden;"><img src="IMAGES/terrain.jpg" alt="Terrain"><span class="badge" style="position: absolute; top: 15px; left: 15px; background: #2ecc71; color: #fff; padding: 6px 12px; font-size: 0.8rem; border-radius: 4px; font-weight: bold; font-family: 'Poppins',sans-serif; letter-spacing: 0.5px;">Disponible</span></div>
+                <div class="Offert-info"><h3>KOUKOURANDOUMI</h3><p class="price"><i class="fas fa-tag" style="font-size: 0.9rem; margin-right: 5px;"></i> 2.000.000 FCFA</p><a href="detail1.html#terrain5" class="btn">Details</a></div>
+            </div>
+            <div class="Offert-card">
+                <div class="img-container" style="position: relative; overflow: hidden;"><img src="IMAGES/terrain.jpg" alt="Terrain"><span class="badge" style="position: absolute; top: 15px; left: 15px; background: #2ecc71; color: #fff; padding: 6px 12px; font-size: 0.8rem; border-radius: 4px; font-weight: bold; font-family: 'Poppins',sans-serif; letter-spacing: 0.5px;">Disponible</span></div>
+                <div class="Offert-info"><h3>ABOISSO TP</h3><p class="price"><i class="fas fa-tag" style="font-size: 0.9rem; margin-right: 5px;"></i> 4.000.000 FCFA</p><a href="detail1.html#terrain6" class="btn">Details</a></div>
+            </div>
+            <div class="Offert-card">
+                <div class="img-container" style="position: relative; overflow: hidden;"><img src="IMAGES/terrain.jpg" alt="Terrain"><span class="badge" style="position: absolute; top: 15px; left: 15px; background: #2ecc71; color: #fff; padding: 6px 12px; font-size: 0.8rem; border-radius: 4px; font-weight: bold; font-family: 'Poppins',sans-serif; letter-spacing: 0.5px;">Disponible</span></div>
+                <div class="Offert-info"><h3>ADIAKE</h3><p class="price"><i class="fas fa-tag" style="font-size: 0.9rem; margin-right: 5px;"></i> 2.500.000 FCFA</p><a href="detail1.html#terrain7" class="btn">Details</a></div>
+            </div>
+            <div class="Offert-card">
+                <div class="img-container" style="position: relative; overflow: hidden;"><img src="IMAGES/terrain.jpg" alt="Terrain"><span class="badge" style="position: absolute; top: 15px; left: 15px; background: #2ecc71; color: #fff; padding: 6px 12px; font-size: 0.8rem; border-radius: 4px; font-weight: bold; font-family: 'Poppins',sans-serif; letter-spacing: 0.5px;">Disponible</span></div>
+                <div class="Offert-info"><h3>Bonoua</h3><p class="price"><i class="fas fa-tag" style="font-size: 0.9rem; margin-right: 5px;"></i> 3.000.000 FCFA</p><a href="detail1.html#terrain8" class="btn">Details</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section" id="contact" style="padding: 90px 0;">
+    <div class="container">
+        <div class="section-title-wrapper" style="text-align: center;">
+            <h2>CONTACTEZ-NOUS</h2>
+        </div>
+        <p style="text-align:center; margin-bottom:40px; color: var(--text-muted); font-size: 1.05rem;">Une question ? Un projet d'acquisition ? Écrivez-nous.</p>
+
+        <div class="contact-flex-layout">
+            <!-- FORMULAIRE -->
+            <div class="form-area">
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Nom complet" required>
+                    <input type="email" name="email" placeholder="Adresse Email" required>
+                    <textarea name="message" placeholder="Votre message ou détails de votre projet foncier..." required></textarea>
+
+                    <div class="btn-center-container">
+                        <button type="submit"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Envoyer le message</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- CARTE -->
+            <div class="map-area">
+                <iframe 
+                src="https://maps.google.com/maps?q=Bonoua,Cote%20d%20Ivoire&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                allowfullscreen=""
+                loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer style="background: #111111; color: #aaaaaa; text-align: center; padding: 40px 20px; font-size: 0.95rem; border-top: 3px solid var(--primary-color);">
+    <p style="margin: 0; letter-spacing: 0.5px;">&copy; 2026 ALLIANCE SUD-EST SARL. Tous droits réservés.</p>
+</footer>
+
+<script>
+function toggleText(id, element) {
+    var texte = document.getElementById(id);
+    if (texte.style.display === "none" || texte.style.display === "") {
+        texte.style.display = "block";
+        element.innerHTML = 'Voir moins <i class="fas fa-chevron-up"></i>';
+    } else {
+        texte.style.display = "none";
+        element.innerHTML = 'Lire la suite <i class="fas fa-chevron-down"></i>';
     }
 }
+
+// GESTION DU MENU BURGER
+const burger = document.getElementById('humberger');
+const menu = document.getElementById('nav-menu');
+
+burger.addEventListener('click', function() {
+    menu.classList.toggle('show');
+});
+</script>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("97HiaqvNMCTI4f2E6"); // TA PUBLIC KEY
+})();
+</script>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_yupcock", "template_30nwooi", this)
+    .then(function() {
+        alert("Message envoyé avec succès !");
+    }, function(error) {
+        alert("Erreur : " + error.text);
+        console.log(error);
+    });
+});
+</script>
+</body>
+</html>
