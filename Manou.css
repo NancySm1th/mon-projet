@@ -70,9 +70,8 @@ header.sticky-header.sticky {
 
 /* --- LOGO --- */
 .logo-img {
-    max-height: 50px; /* Légèrement ajusté pour équilibrer le texte */
+    max-height: 45px; /* On réduit légèrement l'image pour faire de la place au texte */
     width: auto;
-    /* Conserve tes filtres d'origine si ton image doit rester blanche */
     filter: brightness(0) invert(1); 
 }
 
@@ -81,17 +80,17 @@ header.sticky-header.sticky {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%; /* Force le logo à utiliser toute la hauteur disponible */
 }
 
 .logo-text {
-    font-size: 11px; /* Légèrement réduit pour une meilleure intégration */
+    font-size: 11px;
     color: white;
-    margin-top: 4px; /* Un peu d'espace sous l'icône */
+    margin-top: 1px; /* Remonte le texte au plus près de l'image */
     letter-spacing: 1px;
     font-weight: bold;
-    line-height: 1.2; /* Évite que "Sud-Est" ne descende trop bas */
+    line-height: 1; /* Force le texte à rester groupé sans descendre */
 }
-
 /* --- NAVIGATION --- */
 nav {
     display: flex;
