@@ -1,4 +1,4 @@
-/* --- CONFIGURATION GÉNÉRALE & CHARTES DE COULEURS --- */
+ /* --- CONFIGURATION GÉNÉRALE & CHARTES DE COULEURS --- */
 :root {
     --primary-color: #0A3663;    /* Superbe Bleu Royal institutionnel et sécurisant */
     --accent-color: #2D9CD8;     /* Le bleu vif d'origine pour les éléments d'action cliquables */
@@ -68,28 +68,51 @@ header.sticky-header.sticky {
     align-items: center;
 }
 
-/* --- LOGO --- */
-/* --- LOGO --- */
-.logo-img {
-    max-height: 45px; /* Réduit légèrement de 55px à 45px pour gagner de la place */
-    width: auto;
-    filter: brightness(0) invert(1); 
-}
-
+/* --- LOGO (CORRECTION ICI) --- */
 .logo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center; /* Centre verticalement le tout */
+    justify-content: flex-start;
+    gap: 12px;
+    height: 100%;
+}
+
+.logo-img {
+    max-height: 35px;
+    width: auto;
+    filter: brightness(0) invert(1); 
+    margin-bottom: 2px;
+}
+
+/* NOUVEAU : On crée un conteneur juste pour le texte pour le mettre en colonne */
+.logo-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 1.1;
 }
 
 .logo-text {
-    font-size: 11px; /* Légèrement réduit de 12px à 11px */
+    font-size: 1.1rem;
     color: white;
-    margin-top: 1px; /* Réduction de l'espace pour éviter le chevauchement */
     letter-spacing: 1px;
     font-weight: bold;
-    line-height: 1.2; /* Force un interlignage serré pour éviter les débordements */
+    margin: 0;
+    padding: 0;
+    text-align: left; /* Important pour aligner les deux mots à gauche */
+}
+
+/* NOUVEAU : Classe pour le deuxième mot pour le mettre en dessous */
+.logo-sub {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
 }
 
 /* --- NAVIGATION --- */
