@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALLIANCE SUD-EST SARL</title>
+    
+    <!-- ===== CSS EXTERNES ===== -->
+    <link rel="stylesheet" href="Manou.css">
+    
+    <!-- ===== POLICES ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- ===== ICÔNES ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/jpg" href="IMAGES/Alliance.jpg">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="sticky-header">
+    <div class="container">
+        <div class="logo">
+            <img src="IMAGES/Alliance.svg" alt="Logo Alliance Sud-Est" class="logo-img">
+            <div class="logo-brand">
+                <span class="logo-text">ALLIANCE</span>
+                <span class="logo-sub">Sud-Est</span>
+            </div>
+        </div>
+        
+        <div id="humberger">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#home">ACCUEIL</a></li>
+                <li><a href="#about">À PROPOS</a></li>
+                <li><a href="#prestation">PRESTATIONS</a></li>
+                <li><a href="#Offer">OFFRES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero-section" id="home">
+    <div class="overlay">
+        <div class="hero-content">
+            <h1>DÉCOUVRIR NOS TERRAINS</h1>
+            <p class="hero-subtitle">Des espaces sécurisés pour donner vie à vos projets immobiliers</p>
+            <a href="#Offer" class="cta">
+                <i class="fas fa-search"></i> voir nos offres
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">À PROPOS DE NOUS</h2>
+        <p style="max-width:800px; margin:0 auto; text-align:center; line-height:1.9; font-size:1.15rem; color:#555;">
+            <strong style="color:var(--dark-color);">ALLIANCE SUD-EST SARL</strong> est votre partenaire de confiance dans l'immobilier et le foncier en Côte d'Ivoire.
+        </p>
+    </div>
+</section>
+
+<!-- ===== PRESTATIONS ===== -->
+<section id="prestation">
+    <div class="container">
+        <h2 class="section-title">NOS PRESTATIONS</h2>
+        <p class="section-subtitle">Nos services sont conçus pour vous accompagner avec expertise.</p>
+        
+        <div class="grid-services">
+            <!-- Carte 1 -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-building"></i></div>
+                <h3>Gestion locative et administration</h3>
+                <p>Gestion complète de vos biens immobiliers avec rigueur.</p>
+                <p class="suite" id="suite1">Recherche de locataires, baux et loyers.</p>
+                <span class="read-more" onclick="toggleText('suite1', this)">
+                    Lire la suite <i class="fas fa-chevron-down"></i>
+                </span>
+            </div>
+            
+            <!-- Carte 2 -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                <h3>Courtage foncier</h3>
+                <p>Accompagnement professionnel pour vos transactions.</p>
+                <p class="suite" id="suite2">Vérification rigoureuse des titres de propriété.</p>
+                <span class="read-more" onclick="toggleText('suite2', this)">
+                    Lire la suite <i class="fas fa-chevron-down"></i>
+                </span>
+            </div>
+            
+            <!-- Carte 3 -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-home"></i></div>
+                <h3>Transactions immobilières</h3>
+                <p>Achat, vente et négociation de biens.</p>
+                <p class="suite" id="suite3">Expertise du marché local.</p>
+                <span class="read-more" onclick="toggleText('suite3', this)">
+                    Lire la suite <i class="fas fa-chevron-down"></i>
+                </span>
+            </div>
+            
+            <!-- Carte 4 -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                <h3>Lotissement et valorisation</h3>
+                <p>Aménagement technique et mise en valeur foncière.</p>
+                <p class="suite" id="suite4">Bornage et optimisation.</p>
+                <span class="read-more" onclick="toggleText('suite4', this)">
+                    Lire la suite <i class="fas fa-chevron-down"></i>
+                </span>
+            </div>
+            
+            <!-- Carte 5 -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                <h3>Conseil en projets</h3>
+                <p>Expertise et assistance stratégique.</p>
+                <p class="suite" id="suite5">Analyse de viabilité.</p>
+                <span class="read-more" onclick="toggleText('suite5', this)">
+                    Lire la suite <i class="fas fa-chevron-down"></i>
+                </span>
+            </div>
+        </div>
+
+        <!-- ===== VIDEO ===== -->
+        <div class="video-wrapper">
+            <h2>EXEMPLES DE TERRAINS</h2>
+            <video controls>
+                <source src="VIDEO/La planète des animaux- 4K HDR - Christian DREVET (720p, h264).mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- ===== OFFRES ===== -->
+<section id="Offer">
+    <div class="container">
+        <h2 class="section-title">NOS OFFRES</h2>
+        <p class="section-subtitle">Terrains en vente</p>
+        
+        <div class="Offert-grid">
+            <!-- Terrain 1 -->
+            <div class="Offert-card">
+                <div class="img-container">
+                    <img src="IMAGES/arbuste.jpg" alt="Terrain Aboisso">
+                    <span class="badge">Disponible</span>
+                </div>
+                <div class="Offert-info">
+                    <h3>ABOISSO</h3>
+                    <p class="price">3.000.000 FCFA</p>
+                    <a href="detail1.html#terrain1" class="btn">Détails</a>
+                </div>
+            </div>
+            
+            <!-- Terrain 2 -->
+            <div class="Offert-card">
+                <div class="img-container">
+                    <img src="IMAGES/Rokia.jpeg" alt="Terrain Krindjabo">
+                    <span class="badge">Disponible</span>
+                </div>
+                <div class="Offert-info">
+                    <h3>KRINDJABO</h3>
+                    <p class="price">2.000.000 FCFA</p>
+                    <a href="detail1.html#terrain2" class="btn">Détails</a>
+                </div>
+            </div>
+            
+            <!-- Terrain 3 -->
+            <div class="Offert-card">
+                <div class="img-container">
+                    <img src="IMAGES/terrain.jpg" alt="Terrain Aby">
+                    <span class="badge">Disponible</span>
+                </div>
+                <div class="Offert-info">
+                    <h3>ABY</h3>
+                    <p class="price">1.000.000 FCFA</p>
+                    <a href="detail1.html#terrain3" class="btn">Détails</a>
+                </div>
+            </div>
+            
+            <!-- Terrain 4 -->
+            <div class="Offert-card">
+                <div class="img-container">
+                    <img src="IMAGES/terrain.jpg" alt="Terrain Aboisso 2">
+                    <span class="badge">Disponible</span>
+                </div>
+                <div class="Offert-info">
+                    <h3>ABOISSO 2</h3>
+                    <p class="price">3.000.000 FCFA</p>
+                    <a href="detail1.html#terrain4" class="btn">Détails</a>
+                </div>
+            </div>
+            
+            <!-- Terrain 5 -->
+            <div class="Offert-card">
+                <div class="img-container">
+                    <img src="IMAGES/terrain.jpg" alt="Terrain Koukourandoumi">
+                    <span class="badge">Disponible</span>
+                </div>
+                <div class="Offert-info">
+                    <h3>KOUKOURANDOUMI</h3>
+                    <p class="price">2.000.000 FCFA</p>
+                    <a href="detail1.html#terrain5" class="btn">Détails</a>
+                </div>
+            </div>
+            
+            <!-- Terrain 6 -->
+            <div class="Offert-card">
+                <div class="img-container">
+                    <img src="IMAGES/terrain.jpg" alt="Terrain Aboisso TP">
+                    <span class="badge">Disponible</span>
+                </div>
+                <div class="Offert-info">
+                    <h3>ABOISSO TP</h3>
+                    <p class="price">4.000.000 FCFA</p>
+                    <a href="detail1.html#terrain6" class="btn">Détails</a>
+                </div>
+            </div>
+            
+            <!-- Terrain 7 -->
+            <div class="Offert-card">
+                <div class="img-container">
+                    <img src="IMAGES/terrain.jpg" alt="Terrain Adiaké">
+                    <span class="badge">Disponible</span>
+                </div>
+                <div class="Offert-info">
+                    <h3>ADIAKE</h3>
+                    <p class="price">2.500.000 FCFA</p>
+                    <a href="detail1.html#terrain7" class="btn">Détails</a>
+                </div>
+            </div>
+            
+            <!-- Terrain 8 -->
+            <div class="Offert-card">
+                <div class="img-container">
+                    <img src="IMAGES/terrain.jpg" alt="Terrain Bonoua">
+                    <span class="badge">Disponible</span>
+                </div>
+                <div class="Offert-info">
+                    <h3>Bonoua</h3>
+                    <p class="price">3.000.000 FCFA</p>
+                    <a href="detail1.html#terrain8" class="btn">Détails</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <h2 class="section-title" style="color:var(--primary-color);">CONTACTEZ-NOUS</h2>
+        <p class="section-subtitle">Une question ? Un projet d'acquisition ? Écrivez-nous.</p>
+
+        <div class="contact-grid">
+            <!-- Informations de contact -->
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <div>
+                        <p class="label">Notre Emplacement</p>
+                        <p class="value">ABOISSO ANADER, à 50 mètres après la station Petrolub.</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="bi bi-envelope"></i>
+                    <div>
+                        <p class="label">Par Email</p>
+                        <p class="value">alliancesudest225@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="bi bi-phone"></i>
+                    <div>
+                        <p class="label">Appelez-nous</p>
+                        <p class="value">+225 07 57 90 25 52</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulaire -->
+            <div class="form-box">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Nom complet" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Adresse Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Votre message ou détails de votre projet foncier..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Carte Google Maps -->
+        <div class="map-wrapper">
+            <iframe 
+                src="https://maps.google.com/maps?q=5.464910,-3.218612&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                allowfullscreen 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Marque -->
+            <div class="footer-brand">
+                <h4>ALLIANCE SUD-EST</h4>
+                <p>Votre partenaire foncier de confiance en Côte d'Ivoire. Nous mettons à votre disposition des espaces sécurisés et viabilisés pour concrétiser sereinement tous vos projets immobiliers.</p>
+            </div>
+            
+            <!-- Liens -->
+            <div class="footer-links">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#prestation">Prestations</a></li>
+                    <li><a href="#Offer">Nos Offres</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact -->
+            <div class="footer-contact">
+                <h5>Informations</h5>
+                <ul>
+                    <li><i class="bi bi-geo-alt-fill"></i> ABOISSO ANADER, après la station Petrolub.</li>
+                    <li><i class="bi bi-telephone-fill"></i> +225 07 57 90 25 52</li>
+                    <li><i class="bi bi-envelope-fill"></i> alliancesudest225@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bas de page -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 ALLIANCE SUD-EST SARL. Tous droits réservés.</p>
+            <div class="social-icons">
+                <a href="https://google.com" target="_blank"><i class="bi bi-google"></i></a>
+                <a href="https://wa.me/2250757902552" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOATING ===== -->
+<a href="https://wa.me/2250757902552" class="whatsapp-float" target="_blank" title="Discuter sur WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// Fonction pour afficher/masquer le texte "Lire la suite"
+function toggleText(id, element) {
+    var texte = document.getElementById(id);
+    if (texte.style.display === "none" || texte.style.display === "") {
+        texte.style.display = "block";
+        element.innerHTML = 'Voir moins <i class="fas fa-chevron-up"></i>';
+    } else {
+        texte.style.display = "none";
+        element.innerHTML = 'Lire la suite <i class="fas fa-chevron-down"></i>';
+    }
+}
+
+// Menu mobile
+document.getElementById('humberger').addEventListener('click', function() {
+    document.getElementById('nav-menu').classList.toggle('show');
+});
+</script>
+
+<!-- ===== EMAILJS ===== -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+// Initialisation EmailJS
+(function(){
+    emailjs.init("97HiaqvNMCTI4f2E6");
+})();
+
+// Gestion de l'envoi du formulaire
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    emailjs.sendForm("service_yupcock", "template_30nwooi", this)
+        .then(function() {
+            alert("Message envoyé avec succès !");
+            document.getElementById("contact-form").reset();
+        })
+        .catch(function(error) {
+            alert("Erreur : " + error.text);
+            console.log(error);
+        });
+});
+</script>
+
+</body>
+</html>
