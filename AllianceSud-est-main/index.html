@@ -268,7 +268,7 @@
 
         <div class="contact-grid">
 
-            <!-- Formulaire à gauche -->
+            <!-- Gauche : Formulaire de contact -->
             <div class="form-box">
                 <form id="contact-form">
 
@@ -281,7 +281,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="tel" name="telephone" placeholder="Numéro de téléphone" required>
+                        <input type="tel" name="telephone" placeholder="Numéro de téléphone *" required>
                     </div>
 
                     <div class="form-group">
@@ -293,47 +293,49 @@
                 </form>
             </div>
 
-            <!-- Google Maps à droite -->
-            <div class="map-wrapper">
-                <div class="map-controls">
-                    <button type="button" id="map-zoom-in" aria-label="Zoomer">+</button>
-                    <button type="button" id="map-zoom-out" aria-label="Dézoomer">−</button>
+            <!-- Droite : Google Maps + Coordonnées replacées sous la carte -->
+            <div class="right-column">
+                <div class="map-wrapper">
+                    <div class="map-controls">
+                        <button type="button" id="map-zoom-in" aria-label="Zoomer">+</button>
+                        <button type="button" id="map-zoom-out" aria-label="Dézoomer">−</button>
+                    </div>
+
+                    <iframe
+                        id="google-map"
+                        src="https://maps.google.com/maps?q=5.464910,-3.218612&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
                 </div>
 
-                <iframe
-                    id="google-map"
-                    src="https://maps.google.com/maps?q=5.464910,-3.218612&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                    allowfullscreen
-                    loading="lazy">
-                </iframe>
-            </div>
+                <!-- Coordonnées sous la carte -->
+                <div class="contact-info">
 
-        </div>
+                    <div class="info-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <div>
+                            <p class="label">Notre Emplacement</p>
+                            <p class="value">ABOISSO ANADER, à 50 mètres après la station Petrolub.</p>
+                        </div>
+                    </div>
 
-        <!-- Informations de contact -->
-        <div class="contact-info">
+                    <div class="info-item">
+                        <i class="bi bi-envelope"></i>
+                        <div>
+                            <p class="label">Par Email</p>
+                            <p class="value">alliancesudest225@gmail.com</p>
+                        </div>
+                    </div>
 
-            <div class="info-item">
-                <i class="bi bi-geo-alt"></i>
-                <div>
-                    <p class="label">Notre Emplacement</p>
-                    <p class="value">ABOISSO ANADER, à 50 mètres après la station Petrolub.</p>
-                </div>
-            </div>
+                    <div class="info-item">
+                        <i class="bi bi-phone"></i>
+                        <div>
+                            <p class="label">Appelez-nous</p>
+                            <p class="value">+225 07 57 90 25 52</p>
+                        </div>
+                    </div>
 
-            <div class="info-item">
-                <i class="bi bi-envelope"></i>
-                <div>
-                    <p class="label">Par Email</p>
-                    <p class="value">alliancesudest225@gmail.com</p>
-                </div>
-            </div>
-
-            <div class="info-item">
-                <i class="bi bi-phone"></i>
-                <div>
-                    <p class="label">Appelez-nous</p>
-                    <p class="value">+225 07 57 90 25 52</p>
                 </div>
             </div>
 
