@@ -21,7 +21,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #fff;
     color: var(--dark-color);
-    padding-top: 100px;
+    padding-top: 65px;
 }
 
 .container {
@@ -153,6 +153,15 @@ body {
     font-weight: 300;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
 .cta {
     display: inline-block;
     padding: 14px 35px;
@@ -165,13 +174,31 @@ body {
     border-radius: 50px;
     box-shadow: 0 4px 15px rgba(45,156,216,0.4);
     transition: var(--transition);
-    margin-top: 20px;
 }
 
 .cta:hover {
     transform: translateY(-3px);
     background: var(--primary-color);
     box-shadow: 0 6px 20px rgba(10,54,99,0.4);
+}
+
+.cta-secondary {
+    display: inline-block;
+    padding: 14px 30px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
 }
 
 /* ===== SECTIONS ===== */
@@ -193,6 +220,81 @@ section {
     color: #666;
     font-size: 1.05rem;
     margin-bottom: 40px;
+}
+
+/* ===== SECTION NOTRE VISION ===== */
+.vision-header {
+    text-align: center;
+    margin: 40px 0 30px;
+}
+
+.vision-badge {
+    background: #eef2ff;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 8px 24px;
+    border-radius: 30px;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    border: 1px solid rgba(10, 54, 99, 0.15);
+}
+
+.vision-grid {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.vision-card {
+    flex: 1;
+    min-width: 260px;
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+}
+
+.vision-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(10, 54, 99, 0.1);
+    border-color: var(--accent-color);
+}
+
+.vision-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    background: #f0f4fe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vision-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.vision-card h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.vision-card p {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* ===== PRESTATIONS ===== */
@@ -378,101 +480,6 @@ section {
     padding: 80px 0;
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-top: 40px;
-    align-items: start;
-}
-
-.form-box {
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ccdbe0;
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-    transition: var(--transition);
-    box-sizing: border-box;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0 0 10px rgba(10,54,99,0.15);
-}
-
-.form-group textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-.form-box button {
-    width: 100%;
-    padding: 14px;
-    background: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.form-box button:hover {
-    background: var(--accent-color);
-    box-shadow: 0 4px 15px rgba(45,156,216,0.3);
-}
-
-/* Colonne Droite : Carte + Infos */
-.right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-/* MAP */
-.map-wrapper {
-    border-radius: 12px;
-    overflow: hidden;
-    height: 300px;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.map-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-}
-
-.map-controls {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
 .map-controls button {
     width: 36px;
     height: 36px;
@@ -491,43 +498,6 @@ section {
 .map-controls button:hover {
     background: var(--primary-color);
     color: #fff;
-}
-
-/* INFORMATIONS DE CONTACT (Sous la Carte) */
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    background: #fff;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-color);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.info-item i {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-}
-
-.info-item p {
-    margin: 0;
-}
-
-.info-item .label {
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.info-item .value {
-    font-size: 0.85rem;
-    color: #555;
 }
 
 /* ===== FOOTER ===== */
@@ -685,21 +655,18 @@ footer {
         font-size: 2.2rem;
     }
 
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta, .cta-secondary {
+        width: 80%;
+        text-align: center;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .form-box {
-        padding: 20px;
-    }
-
-    .map-wrapper {
-        height: 250px;
     }
 
     .footer-bottom {
@@ -721,5 +688,9 @@ footer {
 
     .section-title {
         font-size: 1.8rem;
+    }
+
+    .vision-grid {
+        flex-direction: column;
     }
 }
